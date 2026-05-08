@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="cont__header">
+            <nav class="navbar">
+                <ul class="navbar__items">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Total</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main__wrapper">
+            <h1>Contador de producción de huevos</h1>
+            <p>Este es un simple contador para rastrear la producción de huevos.</p>
+            <form class="form__cont" action="" >
+                <div>
+                    <label for="eggCount">Las Primeras :</label>
+                    <input type="number" id="eggCount" name="eggCount" min="0" value="0">
+                    <button type="submit">Sumar</button>
+                </div>
+
+                <div>
+                    <label for="eggCount">Las Segundas :</label>
+                    <input type="number" id="eggCount" name="eggCount" min="0" value="0">
+                    <button type="submit">Sumar</button>
+                </div>
+
+                 <div>
+                    <label for="eggCount">Las Terceras :</label>
+                    <input type="number" id="eggCount" name="eggCount" min="0" value="0">
+                    <button type="submit">Sumar</button>
+                </div>
+                <button type="button" id="totalButton">Total</button>
+            </form>
+
+        
+        </main>
+
+        
+    </div>
+    
+</body>
+</html>
