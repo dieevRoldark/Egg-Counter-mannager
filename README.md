@@ -1,5 +1,5 @@
-# Letter-Scanner (Movile first)
-Herramienta para contar la cantidad de huevos diarios que salen de la producción agrícola.
+# Agge-Counter (Movile first)
+Herramienta para contar la cantidad de huevos diarios que salen de la producción avícola.
 
 ## Función Uno
 
@@ -20,4 +20,12 @@ Inventariar los huevos de una forma fácil a partir del total de huevos pesados,
 
 ## Función tres
 Realizar un ecosistema donde los productores de huevos puedan satisfacer la demanda de este producto a los compradores más cercanos
+
+### ideas para mejorar la experiencia avicola
+
+- Crear y guardar perfiles de producción avicola, para personalizar el seguimiento desde el momento que llegan los pollos en sus primeras semanas de vida.
+
+- Registrar cuantas pollos llegan y cuantas van muriendo durante su crecimiento para mantener el seguimiento de cuantas gallinas van a ser parte de la producción final de huevos.
+
+- Automatizar las notificaciones del plan de vacunación para que se generen avisos el dia que se debe vacunar.
 
