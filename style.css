@@ -62,7 +62,30 @@ header, body, div, h1, p, article {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     border-radius: 8px;
-    width: 400px;
+    width: 350px;
+}
+
+.form__egg{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    input, select{
+        padding: 7px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 4px;
+    }
+
+    button{
+        padding: 9px;
+        background-color: var(--navbar-color);
+        color: var(--primary-color);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
 }
 
 .total__diario{
