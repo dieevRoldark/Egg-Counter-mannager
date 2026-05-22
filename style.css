@@ -1,87 +1,76 @@
-body,div,header,nav,section,ul,li {
+header, body, div, h1, p, article {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container {
+
+:root{
+    --primary-color: #f0f0f0;
+    --secondary-color: #c0c0c0;
+    --navbar-color: #000000;
+}
+
+
+/* Barra de navegación - Estilos */
+.content__wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    background-color: var(--secondary-color);
 }
 
-.cont__header {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    background-color: beige;
+.header__navbar{
+    display: flex;
+    justify-content: center;
+    background-color: var(--navbar-color);
     width: 100%;
 }
 
-.navbar{
-    padding: 20px;
-}
-
-.navbar__items{
+.navbar__list{
     display: flex;
-    flex-direction: row;
-    gap: 9px;
-    font-weight: bolder;
-    justify-content: center;
-    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
 
-    li{
-        list-style: none;
-        padding: 5px;
-    }
-
-    a{
-        text-decoration: none;
-        color: black;
-    }
-}
-
-.main__wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 20px;
-    height: 80vh;
-    
-    p{
-        font-size: 0.99rem;
-        margin-bottom: 1rem;
-        text-align: center;
-        margin:21px;
-    }
-}
-
-h1{
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    margin: 40px 0;
-}
-
-.form__cont{
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-    width: 100%;
-    max-width: 400px;
-
-    label{
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    input{
+    .nav__item{
         padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bolder;
+        font-size: 18px;
     }
 }
 
+/* Contenido principal - Estilos */
+
+.main__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__header{
+    text-align: center;
+    margin: 20px;
+}
+
+.galpon{
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.total__diario{
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 10px;
+}
