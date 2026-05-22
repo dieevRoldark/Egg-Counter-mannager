@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Huevos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="content__wrapper">
+    <header class="header__navbar">
+        <nav>
+            <ul class="navbar__list">
+                <li><a href="index.html   " class="nav__item">Inicio</a></li>
+                <li><a href="contador.html" class="nav__item">inventario</a></li>
+                <li><a href="contacto.html" class="nav__item">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main__content">
+        <header class="main__header">
+            <h1>Producción Diaria</h1>
+            <p>Bienvenido a la página.</p>
+        </header>
+        
+        <article class="galpon__uno galpon">
+            <h2>Primeras</h2>
+            <form class="form__egg" action="contador.html" method="post">
+                <label for="cantidad">Cantidad de huevos:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+                <div>
+                    <select name="tamaño" id="tamaño">
+                        <option value="Pequeño">Todos los tamaños</option>
+                        <option value="Pequeño">B</option>
+                        <option value="Mediano">A</option>
+                        <option value="Grande">AA</option>
+                        <option value="extra">AAA</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </article>
+
+        <article class="galpon__dos galpon">
+            <h2>Segundas</h2>
+            <form class="form__egg" action="contador.html" method="post">
+                <label for="cantidad">Cantidad de huevos:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+                <div>
+                    <select name="tamaño" id="tamaño">
+                        <option value="Pequeño">Todos los tamaños</option>
+                        <option value="Pequeño">B</option>
+                        <option value="Mediano">A</option>
+                        <option value="Grande">AA</option>
+                        <option value="extra">AAA</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </article>
+
+        <article class="galpon__tres galpon">
+            <h2>Terceras</h2>
+            <form class="form__egg" action="contador.html" method="post">
+                <label for="cantidad">Cantidad de huevos:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+                <div>
+                    <select name="tamaño" id="tamaño">
+                        <option value="Pequeño">Todos los tamaños</option>
+                        <option value="Pequeño">B</option>
+                        <option value="Mediano">A</option>
+                        <option value="Grande">AA</option>
+                        <option value="extra">AAA</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </article>
+        <div class="total__diario">
+            <h3>Total diario</h3>
+            <p id="total">0</p>
+        </div>
+    </main>
+    
+</body>
+</html>

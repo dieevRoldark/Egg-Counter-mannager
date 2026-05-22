@@ -1,0 +1,99 @@
+header, body, div, h1, p, article {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --primary-color: #f0f0f0;
+    --secondary-color: #c0c0c0;
+    --navbar-color: #000000;
+}
+
+
+/* Barra de navegación - Estilos */
+.content__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.header__navbar{
+    display: flex;
+    justify-content: center;
+    background-color: var(--navbar-color);
+    width: 100%;
+}
+
+.navbar__list{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+
+    .nav__item{
+        padding: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bolder;
+        font-size: 18px;
+    }
+}
+
+/* Contenido principal - Estilos */
+
+.main__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__header{
+    text-align: center;
+    margin: 20px;
+}
+
+.galpon{
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.form__egg{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    input, select{
+        padding: 7px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 4px;
+    }
+
+    button{
+        padding: 9px;
+        background-color: var(--navbar-color);
+        color: var(--primary-color);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+}
+
+.total__diario{
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 10px;
+}
