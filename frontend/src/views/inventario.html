@@ -1,0 +1,36 @@
+<header class="main__header">
+    <h1>Inventario</h1>
+    <p>Calcula la distribución por tamaño usando porcentajes.</p>
+</header>
+
+<article class="galpon">
+    <form id="inventory-form" class="form__egg">
+        <label for="inventory-total">Total de huevos pesados:</label>
+        <input type="number" id="inventory-total" min="0" required>
+
+        <label for="inventory-b">B (%)</label>
+        <input type="number" id="inventory-b" min="0" max="100" value="25" required>
+
+        <label for="inventory-a">A (%)</label>
+        <input type="number" id="inventory-a" min="0" max="100" value="25" required>
+
+        <label for="inventory-aa">AA (%)</label>
+        <input type="number" id="inventory-aa" min="0" max="100" value="25" required>
+
+        <label for="inventory-aaa">AAA (%)</label>
+        <input type="number" id="inventory-aaa" min="0" max="100" value="25" required>
+
+        <button type="submit">Calcular distribución</button>
+    </form>
+</article>
+
+<section class="total__diario inventory__summary">
+    <h3>Resultado estimado</h3>
+    <ul id="inventory-results" class="inventory__result">
+        <li>B: 0</li>
+        <li>A: 0</li>
+        <li>AA: 0</li>
+        <li>AAA: 0</li>
+    </ul>
+    <p id="inventory-feedback" class="inventory__feedback"></p>
+</section>

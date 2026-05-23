@@ -29,3 +29,9 @@ Realizar un ecosistema donde los productores de huevos puedan satisfacer la dema
 
 - Automatizar las notificaciones del plan de vacunación para que se generen avisos el dia que se debe vacunar.
 
+## Ejecución local (SPA con fetch)
+La navegación SPA carga secciones con `fetch`, por lo tanto no funcionará si abres `index.html` con `file://`.
+
+1. Levanta un servidor HTTP local dentro de `frontend`.
+2. Abre `src/index.html` desde ese servidor (por ejemplo: `http://localhost:8000/src/index.html`).
+

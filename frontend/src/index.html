@@ -1,87 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador de Huevos</title>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body class="content__wrapper">
     <header class="header__navbar">
         <nav>
             <ul class="navbar__list">
-                <li><a href="index.html   " class="nav__item">Inicio</a></li>
-                <li><a href="inventario.html" class="nav__item">inventario</a></li>
-                <li><a href="progreso.html" class="nav__item">Contacto</a></li>
+                <li><a href="#/inicio" class="nav__item" data-link data-route="/inicio">Inicio</a></li>
+                <li><a href="#/inventario" class="nav__item" data-link data-route="/inventario">Inventario</a></li>
+                <li><a href="#/progreso" class="nav__item" data-link data-route="/progreso">Progreso</a></li>
             </ul>
         </nav>
     </header>
-
-    <main class="main__content">
-        <header class="main__header">
-            <h1>Producción Diaria</h1>
-            <p>Bienvenido a la página.</p>
-        </header>
-        
-        <article class="galpon__uno galpon">
-            <h2>Primeras</h2>
-            <form class="form__egg" action="inventario.html" method="post">
-                <label for="cantidad">Cantidad de huevos:</label>
-                <input type="number" id="cantidad" name="cantidad" required>
-                <div>
-                    <select name="tamaño" id="tamaño">
-                        <option value="Pequeño">Todos los tamaños</option>
-                        <option value="Pequeño">B</option>
-                        <option value="Mediano">A</option>
-                        <option value="Grande">AA</option>
-                        <option value="extra">AAA</option>
-                    </select>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </article>
-
-        <article class="galpon__dos galpon">
-            <h2>Segundas</h2>
-            <form class="form__egg" action="contador.html" method="post">
-                <label for="cantidad">Cantidad de huevos:</label>
-                <input type="number" id="cantidad" name="cantidad" required>
-                <div>
-                    <select name="tamaño" id="tamaño">
-                        <option value="Pequeño">Todos los tamaños</option>
-                        <option value="Pequeño">B</option>
-                        <option value="Mediano">A</option>
-                        <option value="Grande">AA</option>
-                        <option value="extra">AAA</option>
-                    </select>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </article>
-
-        <article class="galpon__tres galpon">
-            <h2>Terceras</h2>
-            <form class="form__egg" action="contador.html" method="post">
-                <label for="cantidad">Cantidad de huevos:</label>
-                <input type="number" id="cantidad" name="cantidad" required>
-                <div>
-                    <select name="tamaño" id="tamaño">
-                        <option value="Pequeño">Todos los tamaños</option>
-                        <option value="Pequeño">B</option>
-                        <option value="Mediano">A</option>
-                        <option value="Grande">AA</option>
-                        <option value="extra">AAA</option>
-                    </select>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </article>
-        <div class="total__diario">
-            <h3>Total diario</h3>
-            <p id="total">0</p>
-        </div>
+    <main id="app" class="main__content" aria-live="polite">
+        <section class="view-message">
+            <h1>Cargando sección</h1>
+            <p>Inicializando la aplicación SPA.</p>
+        </section>
     </main>
-    
 </body>
 </html>

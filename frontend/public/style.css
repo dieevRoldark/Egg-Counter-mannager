@@ -1,7 +1,14 @@
-header, body, div, h1, p, article {
+* {
+    box-sizing: border-box;
+}
+
+header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, select, button {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+.galpon__avg{
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 
@@ -9,6 +16,10 @@ header, body, div, h1, p, article {
     --primary-color: #f0f0f0;
     --secondary-color: #c0c0c0;
     --navbar-color: #000000;
+    --text-color: #101828;
+    --active-color: #1f2937;
+    --success-color: #0f766e;
+    --error-color: #b42318;
 }
 
 
@@ -18,6 +29,9 @@ header, body, div, h1, p, article {
     flex-direction: column;
     align-items: center;
     background-color: var(--secondary-color);
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
 }
 
 .header__navbar{
@@ -25,6 +39,8 @@ header, body, div, h1, p, article {
     justify-content: center;
     background-color: var(--navbar-color);
     width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .navbar__list{
@@ -32,15 +48,24 @@ header, body, div, h1, p, article {
     list-style: none;
     gap: 20px;
     padding: 0;
+}
 
-    .nav__item{
-        padding: 10px;
-        cursor: pointer;
-        text-decoration: none;
-        color: var(--primary-color);
-        font-weight: bolder;
-        font-size: 18px;
-    }
+.nav__item{
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.nav__item:hover,
+.nav__item:focus-visible,
+.nav__item--active{
+    background-color: var(--active-color);
 }
 
 /* Contenido principal - Estilos */
@@ -50,11 +75,20 @@ header, body, div, h1, p, article {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: min(100%, 1100px);
+    padding: 24px 16px;
 }
 
 .main__header{
     text-align: center;
     margin: 20px;
+}
+.galpones__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
 }
 
 .galpon{
@@ -62,38 +96,98 @@ header, body, div, h1, p, article {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     border-radius: 8px;
-    width: 350px;
+    width: min(100%, 350px);
+}
+
+.galpon h2{
+    margin-bottom: 10px;
 }
 
 .form__egg{
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
 
-    input, select{
-        padding: 7px;
-        border: 1px solid var(--secondary-color);
-        border-radius: 4px;
-    }
+.form__egg input,
+.form__egg select{
+    padding: 7px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+}
 
-    button{
-        padding: 9px;
-        background-color: var(--navbar-color);
-        color: var(--primary-color);
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bolder;
-    }
-
+.form__egg button{
+    padding: 9px;
+    background-color: var(--navbar-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.form__egg button:hover{
+    opacity: 0.9;
 }
 
 .total__diario{
     background-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 200px;
+    width: min(100%, 350px);
     text-align: center;
     margin-bottom: 40px;
-    padding: 10px;
+    padding: 16px;
+}
+
+#total{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 6px 0;
+}
+
+.view-message{
+    width: min(100%, 500px);
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inventory__summary{
+    margin-top: 0;
+}
+
+.inventory__result{
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.inventory__feedback{
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+.inventory__feedback--error{
+    color: var(--error-color);
+}
+
+.progress__list{
+    margin-left: 18px;
+    display: grid;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .navbar__list{
+        gap: 8px;
+    }
+
+    .nav__item{
+        font-size: 16px;
+        padding: 8px;
+    }
 }

@@ -1,0 +1,68 @@
+<header class="main__header">
+    <h1>Producción Diaria</h1>
+    <p>Registra los huevos por galpón y revisa el acumulado del día.</p>
+</header>
+<section class="galpones__container">
+    <article class="galpon">
+        <h2>Primeras</h2>
+        <form class="form__egg" data-galpon="primeras">
+            <label for="cantidad-primeras">Cantidad de huevos:</label>
+            <input type="number" id="cantidad-primeras" name="cantidad-primeras" min="0" required>
+            <div>
+                <select name="tamano-primeras" id="tamano-primeras">
+                    <option value="all">Todos los tamaños</option>
+                    <option value="B">B</option>
+                    <option value="A">A</option>
+                    <option value="AA">AA</option>
+                    <option value="AAA">AAA</option>
+                </select>
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+        <p class="galpon__avg" data-average="primeras">Promedio: 0.00</p>
+    </article>
+
+    <article class="galpon">
+        <h2>Segundas</h2>
+        <form class="form__egg" data-galpon="segundas">
+            <label for="cantidad-segundas">Cantidad de huevos:</label>
+            <input type="number" id="cantidad-segundas" name="cantidad-segundas" min="0" required>
+            <div>
+                <select name="tamano-segundas" id="tamano-segundas">
+                    <option value="all">Todos los tamaños</option>
+                    <option value="B">B</option>
+                    <option value="A">A</option>
+                    <option value="AA">AA</option>
+                    <option value="AAA">AAA</option>
+                </select>
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+        <p class="galpon__avg" data-average="segundas">Promedio: 0.00</p>
+    </article>
+
+    <article class="galpon">
+        <h2>Terceras</h2>
+        <form class="form__egg" data-galpon="terceras">
+            <label for="cantidad-terceras">Cantidad de huevos:</label>
+            <input type="number" id="cantidad-terceras" name="cantidad-terceras" min="0" required>
+            <div>
+                <select name="tamano-terceras" id="tamano-terceras">
+                    <option value="all">Todos los tamaños</option>
+                    <option value="B">B</option>
+                    <option value="A">A</option>
+                    <option value="AA">AA</option>
+                    <option value="AAA">AAA</option>
+                </select>
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+        <p class="galpon__avg" data-average="terceras">Promedio: 0.00</p>
+    </article>
+</section>
+
+<section class="total__diario">
+    <h3>Total diario</h3>
+    <p id="total">0</p>
+    <p id="total-registros">Registros: 0</p>
+</section>
