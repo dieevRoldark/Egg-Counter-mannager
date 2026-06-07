@@ -21,6 +21,7 @@ async function loadView(route) {
 
   if (cache[route]) {
     app.innerHTML = cache[route];
+    loadFeature(route);
     return;
   }
 
@@ -32,9 +33,20 @@ async function loadView(route) {
     const html = await res.text();
     cache[route] = html;
     app.innerHTML = html;
+    loadFeature(route);
   } catch {
     app.innerHTML = '<section class="view-message"><h1>Error de conexión</h1><p>No se pudo cargar la sección. <a href="#/inicio">Volver al inicio</a></p></section>';
   }
+}
+
+function loadFeature(route) {
+  const name = route.replace('/', '');
+  const existing = document.querySelector(`script[data-feature="${name}"]`);
+  if (existing) existing.remove();
+  const script = document.createElement('script');
+  script.src = `features/${name}.js`;
+  script.dataset.feature = name;
+  document.body.appendChild(script);
 }
 
 function updateActiveNav(route) {
@@ -57,3 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
   handleRouteChange();
   window.addEventListener('hashchange', handleRouteChange);
 });
+
