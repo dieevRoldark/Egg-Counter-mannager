@@ -107,8 +107,36 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
     width: min(100%, 350px);
 }
 
-.galpon h2{
+.galpon__title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
     margin-bottom: 10px;
+}
+
+.galpon__title:hover{
+    opacity: 0.7;
+}
+
+.galpon__title:focus-visible{
+    outline: 2px solid var(--navbar-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.galpon__icon{
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.galpon__body[hidden]{
+    display: none;
+}
+
+.galpon__body{
+    transition: opacity 0.2s ease;
 }
 
 .form__egg{
@@ -201,7 +229,7 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
     .galpones__container{
         flex-direction: column;
         align-items: center;
