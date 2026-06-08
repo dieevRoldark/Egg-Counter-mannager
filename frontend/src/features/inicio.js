@@ -1,12 +1,12 @@
-const titulo = document.querySelector('.title');
-if (titulo) titulo.setAttribute('contentEditable', 'true');
+import { getGalponState, setGalponState as saveGalponState } from '../state/toggleState.js';
 
 const isMobile = () => window.matchMedia('(max-width: 700px)').matches;
 const galponTitleSel = '.galpon__title';
 
-function setGalponState(title, expand) {
+function applyGalponState(title, expand) {
   const body = title.parentElement.querySelector('.galpon__body');
   const icon = title.querySelector('.galpon__icon');
+  const galponName = title.parentElement.dataset.galponName;
   if (expand) {
     body.removeAttribute('hidden');
     title.setAttribute('aria-expanded', 'true');
@@ -16,15 +16,14 @@ function setGalponState(title, expand) {
     title.setAttribute('aria-expanded', 'false');
     if (icon) icon.textContent = '▶';
   }
+  if (galponName) {
+    saveGalponState(galponName, expand);
+  }
 }
 
 function toggleGalpon(title) {
   const body = title.parentElement.querySelector('.galpon__body');
-  setGalponState(title, body.hasAttribute('hidden'));
-}
-
-function setAllGalpones(expand) {
-  document.querySelectorAll(galponTitleSel).forEach(t => setGalponState(t, expand));
+  applyGalponState(title, body.hasAttribute('hidden'));
 }
 
 function handleGalponClick(title) {
@@ -32,23 +31,45 @@ function handleGalponClick(title) {
     toggleGalpon(title);
   } else {
     const body = title.parentElement.querySelector('.galpon__body');
-    setAllGalpones(body.hasAttribute('hidden'));
+    document.querySelectorAll(galponTitleSel).forEach(t => {
+      const tBody = t.parentElement.querySelector('.galpon__body');
+      applyGalponState(t, tBody.hasAttribute('hidden'));
+    });
   }
 }
 
-// Initial state
-if (isMobile()) {
-  setAllGalpones(false);
-} else {
-  setAllGalpones(true);
+function initializeGalpones() {
+  document.querySelectorAll('.galpon[data-galpon-name]').forEach(article => {
+    const title = article.querySelector(galponTitleSel);
+    const galponName = article.dataset.galponName;
+    const savedState = getGalponState(galponName);
+    applyGalponState(title, savedState);
+  });
 }
 
-document.querySelectorAll(galponTitleSel).forEach(title => {
-  title.addEventListener('click', () => handleGalponClick(title));
-  title.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleGalponClick(title);
-    }
+function attachListeners() {
+  document.querySelectorAll(galponTitleSel).forEach(title => {
+    title.addEventListener('click', () => handleGalponClick(title));
+    title.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleGalponClick(title);
+      }
+    });
   });
-});
+}
+
+function cleanup() {
+  document.querySelectorAll(galponTitleSel).forEach(title => {
+    const newTitle = title.cloneNode(true);
+    title.parentNode.replaceChild(newTitle, title);
+  });
+}
+
+export function init() {
+  const titulo = document.querySelector('.title');
+  if (titulo) titulo.setAttribute('contentEditable', 'true');
+  cleanup();
+  initializeGalpones();
+  attachListeners();
+}

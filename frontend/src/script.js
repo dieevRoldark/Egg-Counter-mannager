@@ -4,7 +4,14 @@ const routes = {
   '/progreso': './frontend/src/views/progreso.html',
 };
 
+const featureModules = {
+  '/inicio': () => import('./features/inicio.js'),
+  '/inventario': () => import('./features/inventario.js'),
+  '/progreso': () => import('./features/progreso.js'),
+};
+
 const cache = {};
+const loadedFeatures = new Set();
 const app = document.getElementById('app');
 
 function getCurrentRoute() {
@@ -21,7 +28,7 @@ async function loadView(route) {
 
   if (cache[route]) {
     app.innerHTML = cache[route];
-    loadFeature(route);
+    await initFeature(route);
     return;
   }
 
@@ -33,20 +40,24 @@ async function loadView(route) {
     const html = await res.text();
     cache[route] = html;
     app.innerHTML = html;
-    loadFeature(route);
+    await initFeature(route);
   } catch {
     app.innerHTML = '<section class="view-message"><h1>Error de conexión</h1><p>No se pudo cargar la sección. <a href="#/inicio">Volver al inicio</a></p></section>';
   }
 }
 
-function loadFeature(route) {
-  const name = route.replace('/', '');
-  const existing = document.querySelector(`script[data-feature="${name}"]`);
-  if (existing) existing.remove();
-  const script = document.createElement('script');
-  script.src = `./frontend/src/features/${name}.js`;
-  script.dataset.feature = name;
-  document.body.appendChild(script);
+async function initFeature(route) {
+  const loader = featureModules[route];
+  if (!loader) return;
+
+  try {
+    const module = await loader();
+    if (module.init) {
+      module.init();
+    }
+  } catch (err) {
+    console.warn(`Feature init failed for ${route}:`, err);
+  }
 }
 
 function updateActiveNav(route) {
@@ -69,4 +80,3 @@ document.addEventListener('DOMContentLoaded', () => {
   handleRouteChange();
   window.addEventListener('hashchange', handleRouteChange);
 });
-
