@@ -1,7 +1,7 @@
 const routes = {
-  '/inicio': 'views/inicio.html',
-  '/inventario': 'views/inventario.html',
-  '/progreso': 'views/progreso.html',
+  '/inicio': './frontend/src/views/inicio.html',
+  '/inventario': './frontend/src/views/inventario.html',
+  '/progreso': './frontend/src/views/progreso.html',
 };
 
 const cache = {};
@@ -44,7 +44,7 @@ function loadFeature(route) {
   const existing = document.querySelector(`script[data-feature="${name}"]`);
   if (existing) existing.remove();
   const script = document.createElement('script');
-  script.src = `features/${name}.js`;
+  script.src = `./frontend/src/features/${name}.js`;
   script.dataset.feature = name;
   document.body.appendChild(script);
 }
