@@ -68,6 +68,8 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
     background-color: var(--active-color);
 }
 
+/* Barra de navegación - Estilos final */
+
 /* Contenido principal - Estilos */
 
 .main__content{
@@ -181,6 +183,10 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
     margin: 6px 0;
 }
 
+/*Content principal final*/
+
+/* Estilos mensaje de carga*/
+
 .view-message{
     width: min(100%, 500px);
     background-color: var(--primary-color);
@@ -189,6 +195,8 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilos inventario */
 
 .inventory__summary{
     margin-top: 0;
@@ -216,6 +224,39 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
     display: grid;
     gap: 8px;
 }
+
+.inventory__table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+
+    .thead{
+        line-height: 2.5;
+        background-color: var(--secondary-color);
+        
+
+    }
+
+    tbody tr:nth-child(even){
+        background-color: var(--secondary-color);
+
+        th, td{
+            padding: 12px;
+        }
+
+        td{
+            border: 1px solid var(--secondary-color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+/* Estilos inventario final */
 
 @media (max-width: 768px) {
     .navbar__list{
