@@ -1,30 +1,8 @@
 <header class="main__header">
     <h1>Inventario</h1>
-    <p>Calcula la distribución por tamaño usando porcentajes.</p>
+    <p>Visualiza el inventario por galpón.</p>
 </header>
 
-<!--
-<article class="galpon">
-    <form id="inventory-form" class="form__egg">
-        <label for="inventory-total">Total de huevos pesados:</label>
-        <input type="number" id="inventory-total" min="0" required>
-
-        <label for="inventory-b">B (%)</label>
-        <input type="number" id="inventory-b" min="0" max="100" value="25" required>
-
-        <label for="inventory-a">A (%)</label>
-        <input type="number" id="inventory-a" min="0" max="100" value="25" required>
-
-        <label for="inventory-aa">AA (%)</label>
-        <input type="number" id="inventory-aa" min="0" max="100" value="25" required>
-
-        <label for="inventory-aaa">AAA (%)</label>
-        <input type="number" id="inventory-aaa" min="0" max="100" value="25" required>
-
-        <button type="submit">Calcular distribución</button>
-    </form>
-</article>
--->
 <section class="total__diario inventory__summary">
     <h3>Total por tamaño</h3>
     <ul id="inventory-results" class="inventory__result">
@@ -36,47 +14,15 @@
     <p id="inventory-feedback" class="inventory__feedback"></p>
 </section>
 
-<table class="inventory__table">
-    <caption>Ejemplo de distribución de inventario</caption>
-    <thead>
-        <tr>
-            <th>Tamaño</th>
-            <th>Galpones</th>
-            <th>Cantidad</th>
-            <th>Fecha</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>B</td>
-            <td>Primeras</td>
-            <td>100</td>
-            <td>2023-10-01</td>
-        </tr>
-        <tr>
-            <td>A</td>
-            <td>Segundas</td>
-            <td>150</td>
-            <td>2023-10-01</td>
-        </tr>
-        <tr>
-            <td>AA</td>
-            <td>Segundas</td>
-            <td>200</td>
-            <td>2023-10-01</td>
-        </tr>
-        <tr>
-            <td>AAA</td>
-            <td>Terceras</td>
-            <td>250</td>
-            <td>2023-10-01</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th scope="row" colspan="2">Total</th>
-            <td>700</td>
-            <td></td>
-        </tr>
-    </tfoot>
-</table>
+<form class="inventory__form">
+    <label>Cambia el galpon</label>
+    <select name="galpon" id="galpon-select">
+        <option value="primeras">Primeras</option>
+        <option value="segundas">Segundas</option>
+        <option value="terceras">Terceras</option>
+    </select>
+</form>
+
+<div id="inventory-table-container">
+    
+</div>

@@ -219,6 +219,21 @@ header, body, div, h1, h2, h3, p, article, section, ul, li, main, form, input, s
     color: var(--error-color);
 }
 
+.inventory__form{
+    margin: 10px 0;
+}
+
+.inventory__form label{
+    margin-bottom: 9px;
+    font-weight: 600;
+}
+
+.inventory__form select{
+    padding: 7px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
 .progress__list{
     margin-left: 18px;
     display: grid;
